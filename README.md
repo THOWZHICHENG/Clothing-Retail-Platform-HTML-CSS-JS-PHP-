@@ -5,3 +5,4 @@ Also, dont forget to insert the image path to the corresponding variables and da
 
 Note that: This POS System might include some unfixed bugs, any recommendation from public will be note and improve. Open to maintenance and modifications. OPEN SOURCE!!
 
+![Uploading image.png…]()
