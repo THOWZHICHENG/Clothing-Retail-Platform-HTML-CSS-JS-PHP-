@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="registerstyle.css" />
+</head>
+<body>
+<div class="container">
+    <div class="center">
+        <h1>Register</h1>
+        <form action="register_user.php" method="POST">
+            <div class="txt_name">
+                    <div class="txt_first">
+                        <input type="text" name="first_name" required>
+                        <span></span>
+                        <label>First Name</label>
+                    </div>
+                    <div class="txt_last">
+                        <input type="text" name="last_name" required>
+                        <span></span>
+                        <label>Last Name</label>
+                    </div>
+            </div>
+
+            <div class="txt_field">
+                <input type="text" name="email" required>
+                <span></span>
+                <label>Email</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="password" required>
+                <span></span>
+                <label>Password</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="confirm_password" required>
+                <span></span>
+                <label>Confirm Password</label>
+            </div>
+            <div class="pass"><input type="checkbox" checked required> I accept the Terms of Use & Privacy Policy</div>
+            <input type="submit" name="submit" value="Register">
+            <div class="register_link">
+                Already have an account? <a href="login page.html">Login here</a>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

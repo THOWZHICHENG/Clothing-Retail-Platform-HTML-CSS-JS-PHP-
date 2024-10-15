@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>FAQs Section</title>
+        <script
+          src="https://kit.fontawesome.com/1935d064dd.js"
+          crossorigin="anonymous"
+        ></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            html {
+    font-size: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+}
+
+.container{
+    background: linear-gradient(120deg, #8e9cab, #393a41);
+}
+
+.logo {
+    padding-top: 20pt;
+    padding-left: 10%;
+}
+.logo img{
+    margin-top: -5px;
+    margin-left: -50px;
+    margin-right: 45px;
+}
+
+.search-container {
+    position: absolute;
+    width: 300px;
+}
+
+.search-container input[type="text"] {
+    margin: -20px 60px;
+    width: 100%;
+    padding: 30px;
+    border: 1px solid #878787;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.shopicon {
+    position: absolute;
+    top: -80%;
+    left: 390%;
+    transition: all 0.8s ease;
+    color: #333;
+    border-radius: 6px;
+}
+
+.shopicon:hover {
+    transform: scale(1.2);
+    color: rgb(230, 230, 230);
+    background-color: #464646;
+}
+
+.icon {
+    position: absolute;
+    top: -30%;
+    left: 300%;
+}
+
+.searchbar input{
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+.search-container .icon {
+    margin-top: -7.8px;
+    margin-left: 100px;
+    background-color: #c1c1c1;
+    width: 50px; 
+    height: 50px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer; 
+}
+
+.search-container .icon {
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+.search-container .icon:hover {
+    color: whitesmoke;
+    background-color: #4b4b4b; 
+    transition: all 0.8s ease;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 30px 20px;
+}
+
+nav {
+    flex: 1;
+    text-align: center;
+}
+
+.func-list {
+    padding: 40px 100px;
+    font-size: 18px;
+    position: relative;
+}
+
+.function {
+    cursor: pointer;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+.func-list img {
+    width: 24px;
+    height: 24px;
+}
+
+button {
+    cursor: pointer;
+}
+
+.mp,.mv {
+    color: black;
+    text-decoration: none;
+}
+
+.container-2 {
+  position: absolute;
+  width: 1000px;
+  margin: -240px 360px;
+  padding: 30px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.container-2 h1 {
+  font-size: 36px; 
+  font-weight: bold; 
+  color: #2c3e50; 
+  text-transform: uppercase; 
+  letter-spacing: 0.5px; 
+  text-shadow: 2px 2px 4px lightgrey; 
+  text-align: center;
+  margin: 30px
+}
+.container-2 .contact-info {
+  text-align: center;
+}
+.container-2 .contact-info a {
+  display: inline-block;
+  margin: 90px 60px;
+  padding: 30px;
+  background-color: #585858;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30%; 
+}
+.container-2 .contact-info a:hover {
+  background-color: #0056b3;
+}
+.container-2 .contact-info a i{
+  font-size: 120px;
+}
+        </style>
+    </head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="HomePage.php"><img src="./Images/StarX Logo.jpg" width="120px" height="90px" alt="StarX Logo"></a>
+            </div>
+            <nav>
+                <div class="search-container">
+                    <div class="searchbar">
+                        <a href="ShoppingCart.php"><button class="shopicon" type="submit" ><i class="fa fa-shopping-cart" style="font-size:50px"></i></button></a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+        <div class="func-list">
+            <table>
+                <tr>
+                    <td class="function">
+		      <a href="./UserProfile.php"><img src="./Image/userProfile.png" alt="Profile Icon"></a></td>
+                    <td class="function" style="color:#1E90FF;"><a href="./UserProfile.php" class="mp"> Profile </a></td>
+                </tr>
+                <tr>
+                    <td class="function">
+                      <a href="MyPurchase.php" class="mp"><img src="./Image/myPurchase.png" alt="My Purchase Icon"></a></td>
+                    <td class="function"><a href="MyPurchase.php" class="mp" > My Purchase </a></td>
+                </tr>
+                <tr>
+                    <td class="function">
+                        <a href="FAQ.html"><img src="./Image/contactUs.png" alt="Contact Us Icon"></a></td>
+                    <td class="function"><a href="FAQ.html" class="mv" style="color: blue;"> Contact Us </a></td>
+                </tr>
+                <tr>
+                    <td class="function">
+                      <a href="login page.html" class="mp"><img src="./Image/signOut.png" alt="Sign Out Icon"></a></td>
+                    <td class="function"><a onclick="signOut()" class="mv"> Sign Out </a></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <div class="container-2">
+        <h1>Contact Us</h1>
+        <div class="contact-info">
+            <a href="https://www.instagram.com/zara/" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://twitter.com/zara" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="mailto:contact.ca@zara.com"><i class="fa fa-envelope"></i></a>
+        </div>
+    </div>
+    
+    <script>
+        function signOut() {
+            if (confirm("Are you sure you want to sign out?")) {
+                byeMessage();
+                window.location.href="login page.html";
+            } else {
+                alert("You're back!")
+            }
+        }
+
+        function byeMessage() {
+            alert("Bye!");
+            seeYouNextTime();
+        }
+
+        function seeYouNextTime() {
+            alert("See you next time!");
+        }
+    </script>
+</body>
+</html>
