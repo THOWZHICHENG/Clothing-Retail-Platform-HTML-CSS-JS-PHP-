@@ -1,0 +1,274 @@
+DROP DATABASE StarX;
+
+CREATE DATABASE StarX;
+USE StarX;
+
+CREATE TABLE User(
+ user_id int auto_increment PRIMARY KEY,
+ email VARCHAR(30) UNIQUE,
+ fName VARCHAR(30),
+ lName VARCHAR(30),
+ password VARCHAR(255),
+ phoneNo VARCHAR(30),
+ gender VARCHAR(30),
+ DOB DATE,
+address VARCHAR(255)
+);
+
+CREATE TABLE Product (
+    productID INT AUTO_INCREMENT PRIMARY KEY,
+    product_image VARCHAR(255) NOT NULL,
+    name VARCHAR(50),
+    price DECIMAL(10, 2),
+    size VARCHAR(50),
+    color VARCHAR(50),
+    availability VARCHAR(50),
+    description VARCHAR(300)
+);
+
+INSERT INTO Product (product_image, name, price, size, color, availability, description)
+SELECT
+    CASE
+        WHEN color.color_value = 'Khaki' THEN 'https://down-my.img.susercontent.com/file/30d38c2cce625df871edef34eaa3eafc'
+        WHEN color.color_value = 'Pea Green' THEN 'https://down-my.img.susercontent.com/file/da06d5d8195442a03dfe9c1b36eec63e'
+        WHEN color.color_value = 'Black' THEN 'https://down-my.img.susercontent.com/file/9ca5fb2cfc8d04147b097649a55d32fb'
+    END AS product_image,
+    'Short-sleeved Jackets' AS name,
+    24.90 AS price,
+    size.size_value AS size,
+    color.color_value AS color,
+    'Available' AS availability,
+    'Description' AS description
+FROM
+    (SELECT 'XS' AS size_value UNION SELECT 'S' UNION SELECT 'M' UNION SELECT 'L' UNION SELECT 'XL') AS size
+CROSS JOIN
+    (SELECT 'Khaki' AS color_value UNION SELECT 'Pea Green' UNION SELECT 'Black') AS color;
+
+
+INSERT INTO Product (product_image, name, price, size, color, availability, description)
+SELECT
+    CASE
+        WHEN color.color_value = 'Grey' THEN 'https://down-my.img.susercontent.com/file/75d64e52184bac7b29b2eb956edfbb01'
+        WHEN color.color_value = 'White' THEN 'https://down-my.img.susercontent.com/file/a5be4162f79621036afe413c9d1a7b78'
+        WHEN color.color_value = 'Black' THEN 'https://down-my.img.susercontent.com/file/55d83adea7f9193a208a75b696104639'
+    END AS product_image,
+    'Hoodie Short Sleeve T-Shirt' AS name,
+    24.90 AS price,
+    size.size_value AS size,
+    color.color_value AS color,
+    'Available' AS availability,
+    'Description' AS description
+FROM
+    (SELECT 'XS' AS size_value UNION SELECT 'S' UNION SELECT 'M' UNION SELECT 'L' UNION SELECT 'XL') AS size
+CROSS JOIN
+    (SELECT 'Grey' AS color_value UNION SELECT 'White' UNION SELECT 'Black') AS color;
+
+
+INSERT INTO Product (product_image, name, price, size, color, availability, description)
+SELECT
+    CASE
+        WHEN color.color_value = 'White' THEN 'https://down-my.img.susercontent.com/file/sg-11134201-22100-oz2hgwc5xoivf3'
+        WHEN color.color_value = 'Khaki' THEN 'https://down-my.img.susercontent.com/file/sg-11134201-22100-x6np1wc5xoiv46'
+        WHEN color.color_value = 'Black' THEN 'https://down-my.img.susercontent.com/file/sg-11134201-22100-uu9egwc5xoiv46'
+    END AS product_image,
+    'Long Sleeved Hooded Sweater' AS name,
+    31.90 AS price,
+    size.size_value AS size,
+    color.color_value AS color,
+    'Available' AS availability,
+    'Description' AS description
+FROM
+    (SELECT 'XS' AS size_value UNION SELECT 'S' UNION SELECT 'M' UNION SELECT 'L' UNION SELECT 'XL') AS size
+CROSS JOIN
+    (SELECT 'White' AS color_value UNION SELECT 'Khaki' UNION SELECT 'Black') AS color;
+
+
+INSERT INTO Product (product_image, name, price, size, color, availability, description)
+SELECT
+    CASE
+        WHEN color.color_value = 'Dark Blue' THEN 'https://lzd-img-global.slatic.net/g/p/2c420bf107e9c190d4bb5c833c3b2279.jpg_960x960q80.jpg_.webp'
+        WHEN color.color_value = 'Light Blue' THEN 'https://lzd-img-global.slatic.net/g/p/b31ae26817d935490d7befd5b03fdbf7.jpg_720x720q80.jpg'
+        WHEN color.color_value = 'White' THEN 'https://lzd-img-global.slatic.net/g/p/b31ae26817d935490d7befd5b03fdbf7.jpg_720x720q80.jpg'
+    END AS product_image,
+    'Short Sleeved Summer Thin T-shirt' AS name,
+    21.90 AS price,
+    size.size_value AS size,
+    color.color_value AS color,
+    'Available' AS availability,
+    'Description' AS description
+FROM
+    (SELECT 'XS' AS size_value UNION SELECT 'S' UNION SELECT 'M' UNION SELECT 'L' UNION SELECT 'XL') AS size
+CROSS JOIN
+    (SELECT 'White' AS color_value UNION SELECT 'Light Blue' UNION SELECT 'Dark Blue') AS color;
+
+INSERT INTO Product (product_image, name, price, size, color, availability, description)
+SELECT
+    CASE
+        WHEN color.color_value = 'White' THEN 'https://down-my.img.susercontent.com/file/sg-11134201-23020-h1mjkneccnnva6'
+        WHEN color.color_value = 'Red' THEN 'https://down-my.img.susercontent.com/file/my-11134201-23020-6lkt6w6x2snv85'
+        WHEN color.color_value = 'Light Blue' THEN 'https://down-my.img.susercontent.com/file/my-11134201-23020-xfipxz6x2snvcf'
+    END AS product_image,
+    'Thin Long-sleeved Hoodies' AS name,
+    22.90 AS price,
+    size.size_value AS size,
+    color.color_value AS color,
+    'Available' AS availability,
+    'Description' AS description
+FROM
+    (SELECT 'XS' AS size_value UNION SELECT 'S' UNION SELECT 'M' UNION SELECT 'L' UNION SELECT 'XL') AS size
+CROSS JOIN
+    (SELECT 'White' AS color_value UNION SELECT 'Red' UNION SELECT 'Light Blue') AS color;
+
+
+INSERT INTO Product (product_image, name, price, size, color, availability, description)
+SELECT
+    CASE
+        WHEN color.color_value = 'White' THEN 'https://down-my.img.susercontent.com/file/sg-11134201-23020-h1mjkneccnnva6'
+        WHEN color.color_value = 'Red' THEN 'https://down-my.img.susercontent.com/file/my-11134201-23020-6lkt6w6x2snv85'
+        WHEN color.color_value = 'Light Blue' THEN 'https://down-my.img.susercontent.com/file/my-11134201-23020-xfipxz6x2snvcf'
+    END AS product_image,
+    'Thin Long-sleeved Hoodies' AS name,
+    22.90 AS price,
+    size.size_value AS size,
+    color.color_value AS color,
+    'Available' AS availability,
+    'Description' AS description
+FROM
+    (SELECT 'XS' AS size_value UNION SELECT 'S' UNION SELECT 'M' UNION SELECT 'L' UNION SELECT 'XL') AS size
+CROSS JOIN
+    (SELECT 'White' AS color_value UNION SELECT 'Red' UNION SELECT 'Light Blue') AS color;
+
+
+
+INSERT INTO Product (product_image, name, price, size, color, availability, description)
+SELECT
+    CASE
+        WHEN color.color_value = 'Green' THEN 'https://down-my.img.susercontent.com/file/ea53abd7d052e9bcce84e225c578069a'
+        WHEN color.color_value = 'Grey' THEN 'https://down-my.img.susercontent.com/file/aceff16f8012380fcf726fc6324b4cf9'
+        WHEN color.color_value = 'White' THEN 'https://down-my.img.susercontent.com/file/e6151547c50777c5b76d45208de43d51'
+    END AS product_image,
+    'Winter New Trend Long-sleeved Sweater' AS name,
+    23.90 AS price,
+    size.size_value AS size,
+    color.color_value AS color,
+    'Available' AS availability,
+    'Description' AS description
+FROM
+    (SELECT 'XS' AS size_value UNION SELECT 'S' UNION SELECT 'M' UNION SELECT 'L' UNION SELECT 'XL') AS size
+CROSS JOIN
+    (SELECT 'White' AS color_value UNION SELECT 'Green' UNION SELECT 'Grey') AS color;
+
+SELECT * FROM Product;
+
+CREATE TABLE Category (
+    categoryID INT AUTO_INCREMENT PRIMARY KEY,
+    category_image VARCHAR(300),
+    name VARCHAR(50),
+    description VARCHAR(100),
+    Page_link VARCHAR(50)
+);
+
+insert into category(category_image, name, Page_link) values
+('https://down-my.img.susercontent.com/file/194f2011d1074c02fa08a1a38b0334fa','Hoodies','ProductPage1.php'),
+('https://down-my.img.susercontent.com/file/194f2011d1074c02fa08a1a38b0334fa','Sweaters','ProductPage1.php'),
+('https://img.ws.mms.shopee.com.my/cn-11134207-7r98o-lp0l8z61odljeb','Jackets','ProductPage2.php'),
+('https://img.ws.mms.shopee.com.my/cn-11134207-7r98o-lp0l8z61odljeb','T-Shirts','ProductPage2.php'),
+('https://down-my.img.susercontent.com/file/cbceac8bb0a5731a48f22eedcb732a5f','Hoodies','ProductPage3.php'),
+('https://down-my.img.susercontent.com/file/cbceac8bb0a5731a48f22eedcb732a5f','T-shirts','ProductPage3.php'),
+('https://down-my.img.susercontent.com/file/a25230bf98758ba86fa39b8cfbf8fba7','Jackets','ProductPage4.php'),
+('https://down-my.img.susercontent.com/file/a25230bf98758ba86fa39b8cfbf8fba7','T-shirts','ProductPage4.php'),
+('https://down-my.img.susercontent.com/file/my-11134201-23020-p0flp36x2snv93','Hoodies','ProductPage5.php'),
+('https://down-my.img.susercontent.com/file/my-11134201-23020-p0flp36x2snv93','Sweaters','ProductPage5.php'),
+('https://down-my.img.susercontent.com/file/ddee66fea89257fd5d82b4afccf416fb','Hoodies','ProductPage6.php'),
+('https://down-my.img.susercontent.com/file/ddee66fea89257fd5d82b4afccf416fb','Sweaters','ProductPage6.php');
+
+CREATE TABLE Cart (
+    cartID INT AUTO_INCREMENT PRIMARY KEY,
+    productID INT,
+    quantity INT,
+    user_email VARCHAR(30),
+    FOREIGN KEY (productID) REFERENCES Product(productID),
+    FOREIGN KEY (user_email) REFERENCES User(email)
+);
+
+SELECT * FROM Cart;
+
+CREATE TABLE OrderDetail (
+    orderID INT AUTO_INCREMENT PRIMARY KEY,
+    productID INT,
+    user_email VARCHAR(30),
+    price DECIMAL(10, 2),
+    quantity INT,
+    totalAmount DECIMAL(10, 2),
+    orderDate DATETIME,
+    FOREIGN KEY (productID) REFERENCES Product(productID),
+    FOREIGN KEY (user_email) REFERENCES User(email)
+);
+
+select *from OrderDetail;
+
+INSERT INTO OrderDetail (productID, price, quantity, totalAmount, orderDate)
+SELECT c.productID, p.price, c.quantity, p.price * c.quantity, NOW()
+FROM Cart c
+INNER JOIN Product p ON c.productID = p.productID;
+
+CREATE TABLE Payment (
+    paymentID INT AUTO_INCREMENT PRIMARY KEY,
+    orderID INT,
+    paymentTime DATETIME,
+    paymentMethod ENUM('Cash', 'E-Wallet'),
+    E_wallet_type ENUM('Tng','Grab','Boost'),
+    amount DECIMAL(10, 2),
+    user_email VARCHAR(30),
+    FOREIGN KEY (orderID) REFERENCES OrderDetail(orderID),
+    FOREIGN KEY (user_email) REFERENCES User(email)
+);
+
+select*from payment;
+
+CREATE TABLE Review (
+    reviewID INT AUTO_INCREMENT PRIMARY KEY,
+    productID INT,
+    userId INT,
+    rating DECIMAL(2, 1) UNSIGNED,
+    comment VARCHAR(200),
+    dateCreated DATETIME,
+    FOREIGN KEY (productID) REFERENCES Product(productID),
+    FOREIGN KEY (userId) REFERENCES User(user_id)
+);
+
+select *from review;
+
+CREATE TABLE purchases (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    productID INT,
+    product_name VARCHAR(255) NOT NULL,
+    product_image VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    quantity INT NOT NULL,
+    purchase_date DATETIME,
+    user_email VARCHAR(30),
+    FOREIGN KEY (productID) REFERENCES Product(productID),
+    FOREIGN KEY (user_email) REFERENCES User(email)
+);
+
+INSERT INTO purchases (productID, product_name, product_image, price, quantity)
+SELECT od.productID, p.name, p.product_image, p.price, od.quantity
+FROM OrderDetail od
+INNER JOIN Product p ON od.productID = p.productID;
+
+CREATE TABLE Delivery (
+    deliveryID INT AUTO_INCREMENT PRIMARY KEY,
+    address VARCHAR(300),
+    deliveryDate DATE,
+    estimateDate DATE,
+    status ENUM('received','non-received') DEFAULT 'non-received',
+    purchaseID INT,
+    FOREIGN KEY (purchaseID) REFERENCES purchases(id)
+);
+
+select *from delivery;
+
+select *from purchases;
+
+SELECT * FROM User;
